@@ -23,7 +23,7 @@ func main() {
 
 	// <=> Once we build our newDeck function the cards variable then assigned the return value of a function call to newDeck
 
-	cards := newDeck()
+	// cards := newDeck()
 
 	// * To add a new card to our slice, we call the append method, pass in the slice we want to append to and the element we want to append
 	// * It is then assigned to cards. It is important to be aware that the append function does not modify the original slice. It instead return a new slice that assigned back to the variable of "cards"
@@ -44,11 +44,19 @@ func main() {
 
 	// * Since we can have multiple return values from a function, we also need a way to assign them to variables.
 	// * in this scenario, cards is assigned to hand and 5 is assigned to remainingCards
-	hand, remainingCards := deal(cards, 3)
+	// hand, remainingCards := deal(cards, 3)
 
-	hand.print()
-	remainingCards.print()
+	// hand.print()
+	// remainingCards.print()
 
+	// cards.saveToFile("my_cards")
+
+	// cards := newDeckFromFile("my_cards")
+	// cards.print()
+
+	cards := newDeck()
+	cards.shuffle()
+	cards.print()
 }
 
 // * Go needs us to be explicit about what kind of datatype is going to returned from any given function. We do this by adding the datatype after the parens
