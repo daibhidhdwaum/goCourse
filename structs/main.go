@@ -47,13 +47,20 @@ func main() {
 	// ! This doesn't work, because Go is a pass by value language. It makes a copy of the original when we create the updateName function
 	// jim.updateName("Jimmy")
 
-	jimPointer := &jim
-	jimPointer.updateName("Jimmy")
+	// * The apersand operator tells Go to give us acces to the memory address that this struct is sitting at. It is a reference to the memory address rather that the object
+	// * it turn a value into a pointer
+	// jimPointer := &jim
+	// jimPointer.updateName("Jimmy")
+	// * This is a shortcut for the above
+	jim.updateName("jimmy")
 
 	jim.print()
 }
 
 // * Without a pointer this would be definded as (p person)
+// *  The *pointer gives us the value that this memory address is point at
+// * A star in front of a type is different from one in front of a value
+// Q? Pointers are confusing. Study them more.
 func (pointerToPerson *person) updateName(newFirstName string) {
 	(*pointerToPerson).firstName = newFirstName
 }
